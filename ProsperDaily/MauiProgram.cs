@@ -1,4 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
+using ProsperDaily.MVVM.Models;
+using ProsperDailyTests.Repositories;
+using Syncfusion.Maui.Core.Hosting;
 
 namespace ProsperDaily
 {
@@ -6,9 +9,12 @@ namespace ProsperDaily
     {
         public static MauiApp CreateMauiApp()
         {
+            SQLitePCL.Batteries_V2.Init();
+
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .ConfigureSyncfusionCore()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -20,7 +26,7 @@ namespace ProsperDaily
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
-
+            builder.Services.AddSingleton<BaseRepository<Transaction>>();
             return builder.Build();
         }
     }
