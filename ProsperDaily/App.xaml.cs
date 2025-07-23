@@ -12,7 +12,7 @@ namespace ProsperDaily
         {
             InitializeComponent();
             TransactionsRepo = _transactionsRepo;
-            MainPage = new NavigationPage(new DashboardPage());
+            MainPage = new NavigationPage(new AppContainer());
         }
 
         //protected override Window CreateWindow(IActivationState? activationState)
