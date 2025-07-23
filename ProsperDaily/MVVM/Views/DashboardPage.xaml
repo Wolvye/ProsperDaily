@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:converters="clr-namespace:ProsperDaily.Converters"
              x:Class="ProsperDaily.MVVM.Views.DashboardPage"
+        
              Title="DashboardPage">
 
     <ContentPage.Resources>

@@ -1,4 +1,5 @@
-﻿using ProsperDailyTests.Abstractions;
+﻿using Humanizer;
+using ProsperDailyTests.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +16,13 @@ namespace ProsperDaily.MVVM.Models
         public bool IsIncome { get; set; }
 
         public DateTime OperationDate { get; set; }
+
+        //public string HumanDate
+        //{
+        //    get
+        //    {
+        //        return OperationDate.Humanize();
+        //    }
+        //}
     }
 }
