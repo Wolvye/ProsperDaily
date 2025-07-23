@@ -20,25 +20,27 @@
                   StyleClass="Padding25">
                 <VerticalStackLayout >
                     <Label Text="TotalBalance" />
-                    <Label StyleClass="StrongTitle" Text="€1,20"/>
+                    <Label StyleClass="StrongTitle" Text="{Binding Balance, StringFormat='{0:C}'}"/>
                 </VerticalStackLayout>
                 <VerticalStackLayout Grid.Row="2">
                     <Label Text="Income" />
-                    <Label StyleClass="StrongTitle" Text="€1,20"/>
+                    <Label StyleClass="StrongTitle" Text="{Binding Income, StringFormat='{0:C}'}"/>
                 </VerticalStackLayout>
                 <VerticalStackLayout 
                     Grid.Row="2"
                     Grid.Column="1"
                     HorizontalOptions="Center">
                     <Label Text="Expenses" />
-                    <Label StyleClass="StrongTitle" Text="€1,20"/>
+                    <Label StyleClass="StrongTitle" Text="{Binding Expenses, StringFormat='{0:C}'}"/>
                 </VerticalStackLayout>
             </Grid>
         </Grid>
         <Button
             Grid.Row="2"
             StyleClass="CircularButton" 
-            Text="+" />
+            Text="+" 
+            x:Name="AddTransaction"
+            Clicked="AddTransaction_Clicked"/>
         <Grid 
             Grid.Row="3"
             RowDefinitions=".1*,.9*"
